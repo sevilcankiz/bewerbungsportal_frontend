@@ -1,0 +1,120 @@
+.menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0.5rem 0rem;
+    background-color: whitesmoke;
+    color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 10%), 0 10px 15px rgb(0 0 0 / 20%);
+    margin:10px 10px 20px 10px;
+}
+
+.brand-name {
+
+text-decoration: none;
+color: black;
+font-family: 'Gabriola', cursive;
+font-size: 1.7rem;
+margin-left: 1rem;
+}
+
+a {
+color: gray;
+}
+
+.nav-menu {
+margin-left: auto;
+}
+
+.nav-menu ul {
+display: flex;
+list-style: none;
+padding: 0;
+}
+
+.nav-menu li {
+list-style-type: none;
+margin: 0 1rem;
+border-radius: 20px;
+padding: 10px;
+background-color: white;
+border: 1px solid lightgray;
+}
+
+.nav-menu li:hover {
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.NavLink {
+text-decoration: none;
+display: block;
+width: 100%;
+}
+
+.burger-button {
+border: 0;
+height: 40px;
+width: 40px;
+padding: 0.5rem;
+border-radius: 50%;
+/* background-color: #1b8024;  */
+background-image: white;
+cursor: pointer;
+transition: background-color 0.2s ease-in-out;
+position: absolute;
+top: 50%;
+right: 25px;
+transform: translateY(-50%);
+display: none;
+} 
+
+.burger-button:hover {
+background-color: #97C8EB;
+}
+
+.active {
+color: black;
+list-style-type: none;
+}
+  
+  @media screen and (max-width: 850px) {
+    .burger-button {
+      display: block;
+    }
+  
+    .nav-menu ul {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 60px);
+      background-color: rgb(255, 255, 255);
+      border-top: 1px solid black;
+      display: none;
+    }
+  
+    .nav-menu li {
+      text-align: center;
+      margin: 0;
+    }
+  
+    a {
+      color: black;
+      width: 100%;
+      padding: 1.5rem 0;
+    }
+  
+    .nav-menu li:hover {
+      background-color: #eee;
+    }
+  
+    .nav-menu.expanded ul {
+      display: block;
+      z-index: 1;
+      transition: all 0.2s ease-out;
+    }
+  }
