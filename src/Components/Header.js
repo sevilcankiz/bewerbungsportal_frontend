@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import DehazeIcon from '@mui/icons-material/Dehaze';
 // import { NavLink } from "react-router-dom";
 import "../Styles/header.css";
 
@@ -9,12 +10,12 @@ export default function Header() {
   return (
     
     <nav className="menu">
-        <button class="menu-button" onClick={() => {
+        <a class="menu-button" onClick={() => {
             setHamburger(!isHamburger)}}>
-            nav
-        </button>
+            <DehazeIcon />
+        </a>
 
-        <div class={ isHamburger ? "nav-menu expanded" : "nav-menu" }>
+        <div className={ isHamburger ? "nav-menu expanded" : "nav-menu" }>
             <div className="searchbar">
                 <input className="search" type="text" placeholder="Jobtitle"></input>
                 <input type="number" placeholder="Plz"></input>
