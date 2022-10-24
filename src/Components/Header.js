@@ -9,12 +9,12 @@ export default function Header() {
   return (
     
     <nav className="menu">
-        <button class="menu-button" onClick={() => {
+        <button className="menu-button" onClick={() => {
             setHamburger(!isHamburger)}}>
             nav
         </button>
 
-        <div class={ isHamburger ? "nav-menu expanded" : "nav-menu" }>
+        <div className={ isHamburger ? "nav-menu expanded" : "nav-menu" }>
             <div className="searchbar">
                 <input className="search" type="text" placeholder="Jobtitle"></input>
                 <input type="number" placeholder="Plz"></input>
