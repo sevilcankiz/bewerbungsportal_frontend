@@ -10,10 +10,10 @@ export default function Header() {
   return (
     
     <nav className="menu">
-        <a class="menu-button" onClick={() => {
+        <button class="menu-button" onClick={() => {
             setHamburger(!isHamburger)}}>
             <DehazeIcon />
-        </a>
+        </button>
 
         <div className={ isHamburger ? "nav-menu expanded" : "nav-menu" }>
             <div className="searchbar">
