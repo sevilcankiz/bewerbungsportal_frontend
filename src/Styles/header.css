@@ -36,7 +36,9 @@
 }
 
 .menu-button {
-    background-image: white;
+    padding: 0;
+border: none;
+background: none;
     cursor: pointer;
     position: absolute;
     top: 50%;
