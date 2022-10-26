@@ -1,14 +1,16 @@
 
-// export const getUser = async (token) => {
-//   try {
-//     const { data } = await fetch(`${process.env.REACT_APP_PROJECT_API}/auth/me`, {
-//       headers: { Authorization: token }
-//     });
-//     return { data };
-//   } catch (error) {
-//     return { error };
-//   }
-// };
+export const getUser = async (token) => {
+  try {
+    const data = await fetch(`${process.env.REACT_APP_PROJECT_API}/users/me`, {
+      headers: { Authorization: token }
+    });
+    const content = await data.json();
+    console.log("content", content)
+    return { content };
+  } catch (error) {
+    return { error };
+  }
+};
 
 export const registerUser = async (formDataJson) => {
   try {
@@ -26,20 +28,28 @@ export const registerUser = async (formDataJson) => {
     );
     const content = await data.json();
     console.log("content", content)
-    return { data };
+    return { content };
   } catch (error) {
     return { error };
   }
 };
 
-// export const loginUser = async (formData) => {
-//   try {
-//     const { data } = await fetch(
-//       `${process.env.REACT_APP_PROJECT_API}/auth/signin`,
-//       formData
-//     );
-//     return { data };
-//   } catch (error) {
-//     return { error };
-//   }
-// };
+export const loginUser = async (formDataJson) => {
+  try {
+    const data = await fetch(
+      `${process.env.REACT_APP_PROJECT_API}/users/login`, {
+        method: 'POST',
+        body: formDataJson,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      }
+    );
+    const content = await data.json();
+    console.log("content", content)
+    return { content };
+  } catch (error) {
+    return { error };
+  }
+};

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import DehazeIcon from '@mui/icons-material/Dehaze';
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../Styles/header.css";
 
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
   return (
     
     <nav className="menu">
-        <button class="menu-button" onClick={() => {
+        <button className="menu-button" onClick={() => {
             setHamburger(!isHamburger)}}>
             <DehazeIcon />
         </button>
@@ -22,9 +22,9 @@ export default function Header() {
                 <button>search</button>
             </div>
             <ul>
-                <li>LogIn</li>
-                <li>LogOut</li>
-                <li>Info</li>
+                <li><NavLink to="/login">Login</NavLink></li>
+                <li><NavLink to="/register">Registrierung</NavLink></li>
+                <li><NavLink to="/">Info</NavLink></li>
             </ul>
         </div>
     </nav>

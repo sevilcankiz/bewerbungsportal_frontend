@@ -4,7 +4,7 @@ import { registerUser } from "../utils/dbUtils";
 import "../Styles/forms.css";
 
 
-export default function Registrierung({ isAuthenticated, setToken, setIsAuthenticated }) {
+export default function Nutzerdaten() {
 
     const [{ email, password, firstName, lastName, postCode, street, city, phone }, setFormState] = useState({
         email: "",
@@ -22,11 +22,10 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
       const handleSubmit = async (e) => {
         try {
           e.preventDefault();
-          if (!email || !password) return alert("Please fill out all the fields"); // TODO VALIDIERUNG
+          //if (!email || !password) return alert("Please fill out all the fields");
           const formDataJson = JSON.stringify({
             "firstName": firstName,
             "lastName": lastName,
-            "password": password,
             "address": {
                 "postCode": postCode,
                 "street": street,
@@ -44,11 +43,14 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
             } ] 
         });
 
-          const {content} = await registerUser(formDataJson);
-          console.log("test", content);
-          localStorage.setItem("token", content.token);
-          setToken(content.token);
-          setIsAuthenticated(true);
+          const { returnDataJson, error } = await registerUser(formDataJson);
+          if (error) {
+            console.log(error.message);
+          }
+          console.log("returnDataJson", returnDataJson);
+          //localStorage.setItem("token", data.token);
+          //setToken(data.token);
+          //setIsAuthenticated(true);
         } catch (error) {
           console.log(error.message);
         }
@@ -57,7 +59,7 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
 
   return (
     <div className="registration form-container" onSubmit={handleSubmit}>
-        <h1>Registrierung</h1>
+        <h1>Meine Informationen</h1>
       <form className="registration-form">
         <fieldset>
             <legend>Zugangsdaten</legend>
@@ -97,8 +99,22 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
                 <input type="text" name="phone" id="phone" defaultValue="" onChange={handleChange}></input>
             </div>
         </fieldset>
+        <fieldset>
+            <legend>Zertifikate</legend>
+            <div>
+                <label htmlFor="certificates">Zertifikatsdatei hochladen</label>
+                <input type="file" name="certificates" id="certificates" onChange={handleChange}></input>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Lebenslauf</legend>
+            <div>
+                <label htmlFor="resume">Lebenslaufdatei hochladen</label>
+                <input type="file" name="resume" id="resume" onChange={handleChange}></input>
+            </div>
+        </fieldset>
         <div className="button-container">
-            <button type="submit">Registrieren</button>
+            <button type="submit">Save</button>
         </div>
       </form>
     </div>
