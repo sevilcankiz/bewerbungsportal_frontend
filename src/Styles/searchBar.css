@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: space-between;
     min-width: calc(100vw / 3);
+    gap: 0.2em;
     /* position: absolute; */
     /* top: 50%;
     left: 50%; */
