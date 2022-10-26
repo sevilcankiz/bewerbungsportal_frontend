@@ -1,18 +1,19 @@
-import React from 'react'
-import { Routes, Route } from "react-router-dom";
+import Header from "./Header";
 import Suchergebnisse from "./Suchergebnisse";
-import Registrierung from "./Registrierung";
-import Anmeldung from "./Anmeldung";
-import Nutzerdaten from "./Nutzerdaten";
-import "../Styles/main.css";
+import Footer from "./Footer";
+
+
+
 
 export default function Main({ isAuthenticated, setToken, setIsAuthenticated }) {
   return (
-    <Routes>
-        <Route path="/" element={<Suchergebnisse />} />
-        <Route path="/register" element={<Registrierung isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />} />
-        <Route path="/login" element={<Anmeldung isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />} />
-        <Route path="/userdata" element={<Nutzerdaten />} />
-    </Routes>
+    <>
+      <div >
+        <Header />
+        <Suchergebnisse/>
+        <Footer />
+      </div>
+      
+    </>
   )
 }

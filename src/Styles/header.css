@@ -2,14 +2,12 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 100px;
-    padding: 0.5rem 0rem;
-    background-color: whitesmoke;
+    height: 200px;
+    background-image: url(../img/hero.jpg);
+    background-position: bottom 200px;
+    
     color: black;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
     box-shadow: 0 2px 10px rgb(0 0 0 / 10%), 0 10px 15px rgb(0 0 0 / 20%);
-    margin:10px 10px 20px 10px;
 }
 
 .nav-menu {
@@ -36,15 +34,16 @@
 }
 
 .menu-button {
+    display: none;
     padding: 0;
-border: none;
-background: none;
+    border: none;
+    background: none;
     cursor: pointer;
     position: absolute;
     top: 50%;
     right: 25px;
     transform: translateY(-50%);
-    display: none;
+    color: white;
 } 
 
 .active {
