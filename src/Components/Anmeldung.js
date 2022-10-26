@@ -16,7 +16,7 @@ export default function Anmeldung({ isAuthenticated, setToken, setIsAuthenticate
       const handleSubmit = async (e) => {
         try {
           e.preventDefault();
-          //if (!email || !password) return alert("Please fill out all the fields");
+          if (!email || !password) return alert("Bitte geben Sie Ihren Benutzernamen und Ihre E-Mail-Adresse ein!");
           const formDataJson = JSON.stringify({
             "address": {
                 "email": email

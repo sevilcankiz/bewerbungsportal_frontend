@@ -1,20 +1,21 @@
 
 import { useState } from "react";
-import { registerUser } from "../utils/dbUtils";
+// import { updateUser } from "../utils/dbUtils";
 import "../Styles/forms.css";
 
 
-export default function Nutzerdaten() {
+export default function Nutzerdaten(user) {
 
+    console.log(user);
     const [{ email, password, firstName, lastName, postCode, street, city, phone }, setFormState] = useState({
-        email: "",
-        password: "",
-        firstName: "",
-        lastName: "",
-        postCode: "",
-        street: "",
-        city: "",
-        phone: "",
+        email: user.address.email,
+        password: user.password,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        postCode: user.address.postCode,
+        street: user.address.street,
+        city: user.address.city,
+        phone: user.address.phone,
       });
 
       const handleChange = (e) => setFormState((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -22,6 +23,7 @@ export default function Nutzerdaten() {
       const handleSubmit = async (e) => {
         try {
           e.preventDefault();
+
           //if (!email || !password) return alert("Please fill out all the fields");
           const formDataJson = JSON.stringify({
             "firstName": firstName,
@@ -42,15 +44,12 @@ export default function Nutzerdaten() {
                 "resURL": ""
             } ] 
         });
-
-          const { returnDataJson, error } = await registerUser(formDataJson);
-          if (error) {
-            console.log(error.message);
-          }
-          console.log("returnDataJson", returnDataJson);
-          //localStorage.setItem("token", data.token);
-          //setToken(data.token);
-          //setIsAuthenticated(true);
+        console.log(formDataJson);
+        //   const { returnDataJson, error } = await updateUser(formDataJson);
+        //   if (error) {
+        //     console.log(error.message);
+        //   }
+        //   console.log("returnDataJson", returnDataJson);
         } catch (error) {
           console.log(error.message);
         }

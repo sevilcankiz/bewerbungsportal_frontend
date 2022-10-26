@@ -23,9 +23,6 @@ export default function App() {
     const validateToken = async () => {
       try {
         const { content } = await getUser(token);
-
-        console.log("content", content);
-
         setUser(content);
         setIsAuthenticated(true);
       } catch (error) {
@@ -38,10 +35,16 @@ export default function App() {
     token && validateToken();
   }, [token]);
 
+  const logOut = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+    setUser(null);
+    setIsAuthenticated(false);
+  };
 
   return (
     <>
-      <Header />
+      <Header isAuthenticated={isAuthenticated} user={user} logOut={logOut} />
 
       <Routes>
             <Route path="/" element={<Landingpage />} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />
@@ -50,7 +53,7 @@ export default function App() {
             <Route path="/dokumente" element={<Dokumente />} />
             <Route path="/register" element={<Registrierung isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />} />
             <Route path="/login" element={<Anmeldung isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />} />
-            <Route path="/userdata" element={<Nutzerdaten />} />
+            <Route path="/userdata" element={<Nutzerdaten user={user} />} />
       </Routes>
 
       <Footer/>

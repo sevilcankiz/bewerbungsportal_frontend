@@ -4,12 +4,17 @@ import { NavLink } from 'react-router-dom';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import "../Styles/header.css";
 
-export default function Header() {
+export default function Header({ isAuthenticated, logOut, user }) {
     const [isHamburger, setHamburger] = useState(false);
         
   return (
     
     <nav className="menu">
+    { isAuthenticated && user ? (
+        <p>Hallo {user.firstName}</p>
+    ) : (
+        ""
+    )}
         <button className="menu-button" onClick={() => {
             setHamburger(!isHamburger)}}>
             <DehazeIcon />
@@ -22,8 +27,17 @@ export default function Header() {
                 <button>search</button>
             </div>
             <ul>
-                <li><NavLink to="/login">Login</NavLink></li>
-                <li><NavLink to="/register">Registrierung</NavLink></li>
+                { isAuthenticated && user ? (
+                     <>
+                     <li><NavLink to="/userdata">Nutzerdaten</NavLink></li>
+                    <li onClick={logOut}>Logout</li>
+                     </>
+                ) : (
+                    <>
+                    <li><NavLink to="/login">Login</NavLink></li>
+                    <li><NavLink to="/register">Registrierung</NavLink></li>
+                    </>
+                )}
                 <li><NavLink to="/">Info</NavLink></li>
             </ul>
         </div>
