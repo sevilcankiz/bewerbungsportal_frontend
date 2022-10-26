@@ -1,0 +1,21 @@
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    min-width: calc(100vw / 3);
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-60%, -50%); */
+    /*padding-bottom: 20px; */
+}
+
+/* Plus-Button */
+.searchbar>a>img{
+    padding-top: 3px;
+}
+/* Seach-Button */
+.searchbar>button>img{
+    padding-top: 2px;
+}
+

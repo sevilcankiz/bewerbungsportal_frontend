@@ -1,12 +1,21 @@
-* {
+:root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  --braun: #a4644;
+  --blau: #555866;
+  --dunkel-blau: #292b35;
+  --hell-blau: #d7d7e7;
+  --gruen: #82905a;
+  --grau: #cfc8b5;
+  --main-font: 'Montserrat', sans-serif;
+  --header-font: 'Taviraj', serif;
+  --header-font-2: 'Euphoria Script', cursive;
 }
 
 *,
-*::before,
-*::after {
+::before,
+::after {
  box-sizing: inherit;
 }
 

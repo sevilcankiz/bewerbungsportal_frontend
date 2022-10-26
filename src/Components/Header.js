@@ -1,32 +1,20 @@
 import React from 'react'
-import { useState } from 'react';
-import DehazeIcon from '@mui/icons-material/Dehaze';
-// import { NavLink } from "react-router-dom";
+// import { useState } from 'react';
+import Navigation from './Navigation';
+import SearchBar from './SearchBar';
+import HomeLogo from '../img/web-house.png';
+import { NavLink } from "react-router-dom";
 import "../Styles/header.css";
 
 export default function Header() {
-    const [isHamburger, setHamburger] = useState(false);
         
   return (
-    
-    <nav className="menu">
-        <a class="menu-button" onClick={() => {
-            setHamburger(!isHamburger)}}>
-            <DehazeIcon />
-        </a>
-
-        <div className={ isHamburger ? "nav-menu expanded" : "nav-menu" }>
-            <div className="searchbar">
-                <input className="search" type="text" placeholder="Jobtitle"></input>
-                <input type="number" placeholder="Plz"></input>
-                <button>search</button>
-            </div>
-            <ul>
-                <li>LogIn</li>
-                <li>LogOut</li>
-                <li>Info</li>
-            </ul>
+    <header className="header">
+        <div>
+        <NavLink to="/"><img width="17" src={HomeLogo} alt="Suche" /></NavLink>
         </div>
-    </nav>
+        <SearchBar />   
+        <Navigation />
+    </header>
   )
 }
