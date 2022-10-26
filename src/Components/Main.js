@@ -1,14 +1,14 @@
-import React from 'react'
-import { Routes, Route } from "react-router-dom";
+import Header from "./Header";
 import Suchergebnisse from "./Suchergebnisse";
-import Registrierung from "./Registrierung";
-import "../Styles/main.css";
+import Footer from "./Footer";
+
 
 export default function Main() {
   return (
-    <Routes>
-          <Route path="/" element={<Suchergebnisse />} />
-          <Route path="registrierung" element={<Registrierung />} />
-    </Routes>
-  )
+    <div >
+      <Header />
+      <Suchergebnisse/>
+      <Footer />
+    </div>
+  );
 }

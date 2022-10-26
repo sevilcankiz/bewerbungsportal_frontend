@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import DehazeIcon from '@mui/icons-material/Dehaze';
-// import { NavLink } from "react-router-dom";
 import "../Styles/header.css";
 
 export default function Header() {
@@ -23,7 +22,7 @@ export default function Header() {
             </div>
             <ul>
                 <li>LogIn</li>
-                <li>LogOut</li>
+                <li>Registrierung</li>
                 <li>Info</li>
             </ul>
         </div>
