@@ -6,7 +6,7 @@ import HomeLogo from '../img/Home.svg';
 import { NavLink } from "react-router-dom";
 import "../Styles/header.css";
 
-export default function Header() {
+export default function Header({ isAuthenticated, logOut, user }) {
         
   return (
     <header className="header">
@@ -15,7 +15,7 @@ export default function Header() {
         </div>
       </NavLink>        
       <SearchBar />   
-      <Navigation />
+      <Navigation isAuthenticated={isAuthenticated} user={user} logOut={logOut} />
     </header>
   )
 }

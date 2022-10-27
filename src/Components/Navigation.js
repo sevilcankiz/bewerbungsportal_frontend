@@ -3,7 +3,7 @@ import { useState } from 'react';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import { NavLink } from 'react-router-dom';
 
-export default function Navigation() {
+export default function Navigation({ isAuthenticated, logOut, user }) {
     const [isHamburger, setHamburger] = useState(false);
         
   return ( 
@@ -15,9 +15,19 @@ export default function Navigation() {
 
             <div className={ isHamburger ? "nav-menu expanded" : "nav-menu" }>           
                 <ul>
-                    <NavLink to="/login"><li>LogIn</li></NavLink>
-                    <NavLink to="/register"><li>Register</li></NavLink>
-                    <NavLink to="/info"><li>Info</li></NavLink>
+                { isAuthenticated && user ? (
+                     <>
+                     <li><NavLink to="/userdata">Nutzerdaten</NavLink></li>
+                    <li onClick={logOut}>Logout</li>
+                     </>
+                ) : (
+                    <>
+                    <li><NavLink to="/login">Login</NavLink></li>
+                    <li><NavLink to="/register">Registrierung</NavLink></li>
+                    </>
+                )}
+                    
+                <NavLink to="/info"><li>Info</li></NavLink>
                 </ul>
             </div>
         </nav>
