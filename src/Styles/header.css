@@ -50,6 +50,22 @@
     color: black;
     list-style-type: none;
 }
+
+.home-logo {
+    margin-left: 1em;
+    border: 1px solid var(--blau);
+    border-radius: 5px;
+    padding: 0.3em;
+    /* box-shadow: 2px 2px 5px var(--dunkel-blau); */
+    transition: all 0.2s ease-in-out;
+}
+
+.home-logo:hover {
+    box-shadow: 0px 0px 7px var(--dunkel-blau);
+    transform: scale(0.9);
+    background-color: var(--hell-blau);
+    border-radius: 7px;
+}
   
 @media screen and (max-width: 1110px) {
     .menu-button {

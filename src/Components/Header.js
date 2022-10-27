@@ -10,11 +10,12 @@ export default function Header() {
         
   return (
     <header className="header">
-        <div>
-        <NavLink to="/"><div style={{border: "1px solid #292b35", borderRadius: "5px", padding: "5px"}}><img src={HomeLogo} width="30" alt="Home" /></div></NavLink>
+      <NavLink to="/">
+        <div className='home-logo'><img src={HomeLogo} width="30" alt="Home" />
         </div>
-        <SearchBar />   
-        <Navigation />
+      </NavLink>        
+      <SearchBar />   
+      <Navigation />
     </header>
   )
 }
