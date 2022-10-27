@@ -1,6 +1,7 @@
-.menu {
+.header {
     position: relative;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 200px;
     background-image: url(../img/hero.jpg);
@@ -51,14 +52,21 @@
     list-style-type: none;
 }
 
-.searchbar{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding-bottom: 20px;
+.home-logo {
+    margin-left: 1em;
+    border: 1px solid var(--blau);
+    border-radius: 5px;
+    padding: 0.3em;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
 }
 
+.home-logo:hover {
+    /* box-shadow: 0px 0px 7px var(--hell-blau); */
+    transform: scale(0.9);
+    background-color: var(--hell-blau);
+    border-radius: 7px;
+}
   
 @media screen and (max-width: 1110px) {
     .menu-button {

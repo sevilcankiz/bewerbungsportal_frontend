@@ -7,16 +7,11 @@ import "../Styles/main.css";
 
 
 export default function Main({ isAuthenticated, setToken, setIsAuthenticated, user }) {
-  return (
-
-    <>
-      <div >
+  return (    
+      <main>
         <Header />
         <Suchergebnisse/>
         <Footer />
-      </div>
-      
-    </>
-
+      </main>
   )
 }

@@ -1,0 +1,25 @@
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    min-width: calc(100vw / 3);
+    gap: 0.2em;
+}
+
+/* Plus-Button */
+.searchbar>a>img{
+    background-color: white;
+    margin-top: 0.2em;
+    border-radius: 50%;
+    transition: all 0.8s ease-in-out;
+}
+
+.searchbar>a>img:hover{
+    transform: rotate(360deg);
+    background-color: var(--hell-blau);
+}
+/* Seach-Button */
+.searchbar>button>img{
+    padding-top: 2px;
+}
+

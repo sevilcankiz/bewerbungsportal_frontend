@@ -5,7 +5,8 @@
 @media screen and (max-width:850px){
     .footer {
         display: flex;
-        background-color: #333;
+        background-color: #292b35;
+        /* color: #cfc8b5; */
         overflow: hidden;
         position: fixed;
         bottom: 0;
@@ -16,18 +17,19 @@
     .footer .li {
         float: left;
         list-style-type: none;
-        color: #f2f2f2;
+        color: #cfc8b5;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
-        
-        
+        transition: all 0.4s ease-in-out;    
     }
 
     .footer .li:hover {
-        background-color: #ddd;
-        color: black;
+        background-color: #cfc8b5;;
+        color: #292b35;
+        transform: scale(1.1);
+        
       }
       
       
