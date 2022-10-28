@@ -36,10 +36,10 @@ export const registerUser = async (formDataJson) => {
 
 export const updateUser = async (formDataJson) => {
   try {
-    console.log("API", process.env.REACT_APP_PROJECT_API);
+    console.log("API", `${process.env.REACT_APP_PROJECT_API}/users/${JSON.parse(formDataJson).id}`);
     console.log("formDataJson", formDataJson);
     const data = await fetch(
-      `${process.env.REACT_APP_PROJECT_API}/users`, {
+      `${process.env.REACT_APP_PROJECT_API}/users/${JSON.parse(formDataJson).id}`, {
         method: 'PUT',
         body: formDataJson,
         headers: {
