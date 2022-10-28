@@ -4,9 +4,12 @@
   box-sizing: border-box;
   --braun: #a4644;
   --blau: #555866;
-  --dunkel-blau: #292b35;
+  --dunkel-blau: #1b1a20;
   --hell-blau: #d7d7e7;
   --gruen: #82905a;
+  --dunkel-gruen: #346316;
+  --hell-gruen: #9dcc71;
+  --gelb: #f9e8cc;
   --grau: #cfc8b5;
   --main-font: 'Montserrat', sans-serif;
   --header-font: 'Taviraj', serif;
@@ -19,7 +22,10 @@
  box-sizing: inherit;
 }
 
-
+.App {
+  display: flex;
+  flex-direction: column;
+}
 
 
 

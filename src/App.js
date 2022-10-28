@@ -12,12 +12,14 @@ import Footer from './Components/Footer';
 import Anmeldung from './Components/Anmeldung';
 import Nutzerdaten from './Components/Nutzerdaten';
 import './App.css';
+import SearchBar from "./Components/SearchBar";
 
 export default function App() {
   
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+  
 
   useEffect(() => {
     const validateToken = async () => {
@@ -43,9 +45,9 @@ export default function App() {
   };
 
   return (
-    <>
+    <div className="App">
       <Header isAuthenticated={isAuthenticated} user={user} logOut={logOut} />
-
+      <SearchBar />
       <Routes>
             <Route path="/" element={<Landingpage />} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />
             <Route path="/suchergebnisse" element={<Suchergebnisse />} />
@@ -57,6 +59,6 @@ export default function App() {
       </Routes>
 
       <Footer/>
-    </>
+    </div>
   )
 }

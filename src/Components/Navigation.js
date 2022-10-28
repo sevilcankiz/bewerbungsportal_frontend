@@ -27,7 +27,7 @@ export default function Navigation({ isAuthenticated, logOut, user }) {
                     </>
                 )}
                     
-                <NavLink to="/info"><li>Info</li></NavLink>
+                    <li><NavLink to="/info">Info</NavLink></li>
                 </ul>
             </div>
         </nav>

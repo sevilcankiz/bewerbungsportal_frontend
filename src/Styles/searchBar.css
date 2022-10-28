@@ -1,25 +1,111 @@
+
+#search-form{
+    border-radius: 0.4em;
+    padding: 0.5em;
+    position: fixed;
+    top: 3.3em;
+    right: calc(100vw / 2.5);
+    background-color: #1b1a20c5;
+    color: var(--gelb);
+    max-width: calc(100 / 2);
+    /* box-shadow: 0.5em 0.8em 2em var(--dunkel-blau); */
+}
+
 .searchbar{
+    background-color: var(--dunkel-blau);
     display: flex;
-    justify-content: center;
-    align-items: space-between;
-    min-width: calc(100vw / 3);
-    gap: 0.2em;
+    align-items: center;
+    min-width: 100%;
+    gap: 0.5em 0.1em;
+}
+
+.searchbar>input{
+    height: 2em;
+    /* border: none; */
+    /* border-bottom: 1px solid var(--dunkel-blau); */
+    border-radius: 0.2em;
+    padding-left: 0.5em;
+    background-color: var(--hell-blau);
+    color: var(--dunkel-blau);
+    font-size: 1.2em;
+    font-family: var(--main-font);
+    font-weight: 300;
+    outline: none;
 }
 
 /* Plus-Button */
-.searchbar>a>img{
-    background-color: white;
-    margin-top: 0.2em;
-    border-radius: 50%;
-    transition: all 0.8s ease-in-out;
+.searchbar>button{
+    height: 38px;
+    width: 38px;
+    border: none;
+    border-radius: 0.2em;
+    background-color: var(--gruen);
+    color: var(--gelb);
+    font-size: 1.2em;
+    font-family: var(--main-font);
+    font-weight: 400;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
-.searchbar>a>img:hover{
-    transform: rotate(360deg);
-    background-color: var(--hell-blau);
-}
-/* Seach-Button */
 .searchbar>button>img{
-    padding-top: 2px;
+    height: 100%;
+    width: 100%;
 }
 
+.searchbar>button:hover{
+    background-color: var(--hell-gruen);
+    transform: scale(0.9);
+}
+
+.vollsuche{
+    max-width: 100%;
+}
+
+.fieldsets{
+    border-radius: 1em;
+    border-color: var(--gelb);
+}
+
+.fieldsets>div>label{
+    font-size: smaller;
+}
+
+
+@media screen and (max-width: 850px){
+    #search-form{
+        left: calc(100vw / 4);
+    }
+    .searchbar{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-around;
+        min-width: 100%;
+        gap: 0.2em;
+    }
+  
+    .searchbar>input{
+        height: 1.5em;
+    }
+
+    .searchbar>button{
+        
+        align-self: flex-end;
+    }
+
+  }
+
+  @media screen and (max-width: 800px){
+    #search-form{
+        left: calc(100vw / 6);
+        min-width: 70vw;
+    }
+    .searchbar{
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-width: 100%;  
+  }
+} 
