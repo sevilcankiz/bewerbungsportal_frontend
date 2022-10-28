@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { registerUser } from "../utils/dbUtils";
 import "../Styles/forms.css";
 
@@ -55,10 +56,12 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
       };
 
 
-  return (
-    <div className="registration form-container" onSubmit={handleSubmit}>
+  return isAuthenticated ? (
+    <Navigate to="/" />
+  ) : (
+    <div className="registration form-container">
         <h1>Registrierung</h1>
-      <form className="registration-form">
+      <form className="registration-form" onSubmit={handleSubmit}>
         <fieldset>
             <legend>Zugangsdaten</legend>
             <div>
@@ -69,6 +72,9 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
                 <label htmlFor="password">Passwort</label>
                 <input type="password" name="password" id="password" value={password} onChange={handleChange}></input>
             </div>
+        </fieldset>
+        <fieldset>
+            <legend>Persönliche Daten</legend>
             <div>
                 <label htmlFor="firstName">Vorname</label>
                 <input type="text" name="firstName" id="firstName" value={firstName} onChange={handleChange}></input>
@@ -77,9 +83,6 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
                 <label htmlFor="lastName">Nachname</label>
                 <input type="text" name="lastName" id="lastName" value={lastName} onChange={handleChange}></input>
             </div>
-        </fieldset>
-        <fieldset>
-            <legend>Adressdaten</legend>
             <div>
                 <label htmlFor="street">Straße</label>
                 <input type="text" name="street" id="street" defaultValue="" onChange={handleChange}></input>
