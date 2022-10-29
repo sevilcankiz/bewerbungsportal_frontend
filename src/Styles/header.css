@@ -1,12 +1,14 @@
 .header {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     height: 586px;
     background-image: url(../img/hero1.jpg);
-    background-position: bottom 200px;
-    box-shadow: 0.6em 0.5em 3em var(--dunkel-blau);   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-position: bottom 200px; */
+    box-shadow: 0.6em 0.3em 0.8em var(--blau);   
 }
 
 .menu{

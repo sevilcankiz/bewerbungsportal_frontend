@@ -1,16 +1,16 @@
 import React from 'react'
-import '../Styles/main.css'
+import '../Styles/jobcard.css'
 
 
 export default function Jobcard({params}) {
   console.log("Jobcard-params: ",params);
     return (
-      <article>
-        <p>Beruf: {params.beruf}</p>      
-        <p>Titel: {params.titel}</p>      
-        <p>Arbeitgeber: {params.arbeitgeber}</p>      
-        <p>Externe URL: {params.externeUrl}</p>
-        <p>Referenz Nr: {params.refnr}</p>
+      <article className='jobcard'>
+        <h4>Beruf: {params.beruf}</h4>
+        <h5>Titel: {params.titel} </h5>    
+        Arbeitgeber: {params.arbeitgeber}<br/>      
+        Externe URL: <a href={params.externeUrl} target="_blank" rel='noreferrer' >{params.arbeitgeber}</a><br/>
+        Referenz Nr: {params.refnr}<br/>
       </article>
     )
   }

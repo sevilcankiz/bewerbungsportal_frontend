@@ -1,0 +1,7 @@
+.jobcard{
+    border: 1px solid var(--dunkel-blau);
+    border-radius: 0.2em;
+    padding: 0.5em;
+    margin: 1em;
+    box-shadow: 0.5em 0.1em 0.7em var(--blau);
+}

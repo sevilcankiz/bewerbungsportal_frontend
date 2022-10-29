@@ -2,7 +2,7 @@
 #search-form{
     border-radius: 0.4em;
     padding: 0.5em;
-    position: fixed;
+    position: absolute;
     top: 3.3em;
     right: calc(100vw / 2.5);
     background-color: #1b1a20c5;

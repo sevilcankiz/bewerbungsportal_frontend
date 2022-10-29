@@ -50,14 +50,14 @@ export default function App() {
       <SearchBar />
       <Routes>
             <Route path="/" element={<Landingpage />} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />
-            <Route path="/suchergebnisse" element={<Suchergebnisse />} />
+            
             <Route path="/bewerbung" element={<Bewerbung />} />
             <Route path="/dokumente" element={<Dokumente />} />
             <Route path="/register" element={<Registrierung isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />} />
             <Route path="/login" element={<Anmeldung isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setToken={setToken} />} />
             <Route path="/userdata" element={<Nutzerdaten user={user} />} />
       </Routes>
-
+      <Suchergebnisse />
       <Footer/>
     </div>
   )

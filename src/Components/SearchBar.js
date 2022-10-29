@@ -22,7 +22,7 @@ export default function SearchBar() {
 
   const handleChange = (e) => setFormState((prev) => ({ ...prev, [e.target.id]: e.target.value }));
 
-  useEffect(()=>{
+  //useEffect(()=>{
     // setJobArt(localStorage.getItem("jobArt"));
     // setJobOrt(localStorage.getItem("jobOrt"));
     // if (jobArt ) {
@@ -35,8 +35,8 @@ export default function SearchBar() {
     //   const jobOrtInput = document.getElementById("jobOrt");
     //   jobOrtInput.value = jobOrt;
     // }
-  return () => setJobErgebnisse([]);
-  }, [jobArt, jobOrt, isVolleSuche]);
+  //return () => setJobErgebnisse([]);
+  //}, [jobArt, jobOrt, isVolleSuche]);
   
   
 
@@ -68,6 +68,7 @@ export default function SearchBar() {
 
 
   return (
+    <>
     <div id="search-form">
       <form onSubmit={handleSubmit}>
         <div className="searchbar">
@@ -123,7 +124,10 @@ export default function SearchBar() {
           </div>
         }
       </form>
-      {sucheStarten && <NavLink to="/suchergebnisse"><Suchergebnisse jobErgebnisse={jobErgebnisse} /></NavLink>}
     </div>
+    <div className='suchergebnisse'>
+      {sucheStarten &&<Suchergebnisse jobErgebnisse={jobErgebnisse} />}
+    </div>
+      </>
   )
 }
