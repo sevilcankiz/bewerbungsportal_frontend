@@ -39,15 +39,7 @@ export default function Nutzerdaten({user, token}) {
                 "city": city,
                 "email": email,
                 "phone": [phone]
-            },
-            "certificates": [ { 
-                "certName": "", 
-                "certURL": ""
-            } ],
-            "resumes": [ { 
-                "resName": "", 
-                "resURL": ""
-            } ] 
+            }
         });
         console.log(formDataJson);
           const { returnDataJson, error } = await updateUser(formDataJson);
@@ -109,31 +101,39 @@ export default function Nutzerdaten({user, token}) {
 
     <form className="registration-form" method="post" encType="multipart/form-data" action={ `${process.env.REACT_APP_PROJECT_API}/users/${user._id}/${file_type}` }>
         <div>
-            <div className="resume-frame">
-                <h3>Lebensläufe</h3>
-            {user.resumes.length &&
-                user.resumes.map((resume) => {
-                    return (resume.resName !== "") ?
-                        (
-                            <div key={resume._id} className="resume-card">
-                                <p>{resume.resName}</p>
-                            </div>
-                        ) : ("");
-                    }
-                )}
-            </div>
-            <div className="certificate-frame">
-                <h3>Zertifikate</h3>
-            {user.certificates.length &&
-                user.certificates.map((certificate) => {
-                    return (certificate.certName !== "") ? (
-                            <div key={certificate._id} className="certificate-card">
-                                <p>{certificate.certName}</p>
-                            </div>
-                        ) : "";
-                    }
-                )}
-            </div>
+            {
+                user.resumes.length &&
+                    <div className="resume-frame">
+                        <h3>Lebensläufe</h3>
+                         {user.resumes.length &&
+                         user.resumes.map((resume) => {
+                                return (resume.resName !== "") ?
+                                 (
+                                     <div key={resume._id} className="resume-card">
+                                         <p>{resume.resName}</p>
+                                      </div>
+                                  ) : "";
+                              }
+                         )}
+                     </div>
+            }
+            {
+                user.certificates.length &&
+                    <div className="certificate-frame">
+                        <h3>Zertifikate</h3>
+                         {user.certificates.length &&
+                            user.certificates.map((certificate) => {
+                                return (certificate.certName !== "") ?
+                                (
+                                        <div key={certificate._id} className="certificate-card">
+                                            <p>{certificate.certName}</p>
+                                        </div>
+                                ) : "";
+                            }
+                         )}
+                    </div>
+            }
+          
         </div>
 
         <fieldset>
