@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react';
 import { searchJobs } from '../utils/jobApiUtils';
 import "../Styles/searchBar.css";
 // import "../Styles/forms.css";
 import SearchLogo from '../img/icons8-suche.svg';
 import PlusLogo from '../img/icons8-plus.svg';
-import { NavLink } from 'react-router-dom';
 import Suchergebnisse from "./Suchergebnisse";
 
 export default function SearchBar() {
@@ -125,9 +124,9 @@ export default function SearchBar() {
         }
       </form>
     </div>
-    <div className='suchergebnisse'>
+    
       {sucheStarten &&<Suchergebnisse jobErgebnisse={jobErgebnisse} />}
-    </div>
+   
       </>
   )
 }
