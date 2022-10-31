@@ -1,16 +1,14 @@
-import React from 'react'
-import '../Styles/main.css'
+import React from 'react';
+import Jobcard from './Jobcard';
 
 
-export default function Suchergebnisse() {
+
+export default function Suchergebnisse({jobErgebnisse}) {
+  
+  console.log("Suchergebnisse", jobErgebnisse);
     return (
-      <div >
-        <div className="suchergebnisse">
-        <p>Job Search</p>
-        </div>
-        <div>
-
-        </div>
-      </div>
+      <>
+         {jobErgebnisse&&jobErgebnisse.map((job) => ( <><Jobcard key={job.hashId} params={job} /><input type="checkbox" id={job.hashId} /></> ))}
+      </>
     )
   }

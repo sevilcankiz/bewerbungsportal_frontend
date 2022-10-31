@@ -1,12 +1,11 @@
-import Suchergebnisse from "./Suchergebnisse";
+import Header from "./Header";
 
 
 
 export default function Landingpage() {
   return (
-    <div >
-      <Suchergebnisse/>
-    </div>
+    <>
+    </>
   );
 }
 

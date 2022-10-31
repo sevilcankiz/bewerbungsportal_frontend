@@ -5,19 +5,21 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Registrierung from "./Components/Registrierung";
 import Bewerbung from "./Components/Bewerbung";
 import Dokumente from "./Components/Dokumente";
-import Landingpage from "./Components/Landingpage";
-import Suchergebnisse from "./Components/Suchergebnisse";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Anmeldung from "./Components/Anmeldung";
-import Nutzerdaten from "./Components/Nutzerdaten";
-import ProtectedLayout from "./Components/ProtectedLayout";
-import "./App.css";
+import Landingpage from './Components/Landingpage';
+import Suchergebnisse from './Components/Suchergebnisse';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Anmeldung from './Components/Anmeldung';
+import Nutzerdaten from './Components/Nutzerdaten';
+import ProtectedLayout from './Components/ProtectedLayout';
+import './App.css';
+import SearchBar from "./Components/SearchBar";
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+  
 
   const navigate = useNavigate();
 
@@ -47,9 +49,9 @@ export default function App() {
 
   console.log("authenticated??", isAuthenticated);
   return (
-    <>
+    <div className="App">
       <Header isAuthenticated={isAuthenticated} user={user} logOut={logOut} />
-
+      <SearchBar />
       <Routes>
         <Route
           path="/"
