@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { loginUser } from "../utils/dbUtils";
 import "../Styles/forms.css";
 
@@ -35,10 +36,12 @@ export default function Anmeldung({ isAuthenticated, setToken, setIsAuthenticate
       };
 
 
-  return (
-    <div className="registration form-container" onSubmit={handleSubmit}>
+  return isAuthenticated ? (
+    <Navigate to="/" />
+  ) : (
+    <div className="registration form-container">
         <h1>Login</h1>
-      <form className="registration-form">
+      <form className="registration-form" onSubmit={handleSubmit}>
         <fieldset>
             <legend>Zugangsdaten</legend>
             <div>
