@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { loginUser } from "../utils/dbUtils";
 import "../Styles/forms.css";
 
@@ -35,9 +35,11 @@ export default function Anmeldung({ isAuthenticated, setToken, setIsAuthenticate
         }
       };
 
+      const location = useLocation();
+      const from = location.state?.from || "/";
 
   return isAuthenticated ? (
-    <Navigate to="/" />
+    <Navigate to={from} replace="true" />
   ) : (
     <div className="registration form-container">
         <h1>Login</h1>
