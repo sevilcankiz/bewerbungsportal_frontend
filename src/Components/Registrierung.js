@@ -34,15 +34,7 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
                 "city": city,
                 "email": email,
                 "phone": [phone]
-            },
-            "certificates": [ { 
-                "certName": "", 
-                "certURL": ""
-            } ],
-            "resumes": [ { 
-                "resName": "", 
-                "resURL": ""
-            } ] 
+            }
         });
 
           const {content} = await registerUser(formDataJson);
