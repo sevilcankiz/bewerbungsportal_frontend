@@ -73,7 +73,7 @@
 }
 
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 1100px){
     #search-form{
         left: calc(100vw / 4);
     }
@@ -91,7 +91,6 @@
     }
 
     .searchbar>button{
-        
         align-self: flex-end;
     }
 
@@ -102,11 +101,10 @@
         left: calc(100vw / 6);
         min-width: 70vw;
     }
+
     .searchbar{
-      display: flex;
-      
       flex-direction: column;
       align-items: stretch;
       min-width: 100%;  
-  }
+    }
 } 
