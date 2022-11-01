@@ -1,33 +1,78 @@
-
-form {
-    max-width: 800px;
+.container{
+    display: flex;
+    flex-direction: column;
 }
-fieldset {
-    margin: 10px 0;
+.registration {
+    margin: 0 auto;
+    padding: 0 4rem;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+}
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.form-container > * {
+    width: 48%;
+    max-width: 500px;
+}
+.registration-form fieldset {
+    margin-top: 1rem;
     padding: 10px 20px;
+    background: var(--gelb);
+    border-radius: 0.5rem;
+    border: 1px solid var(--dunkel-gruen);
 }
-label {
+.registration-form label {
     width: 200px;
     display: inline-block;
 }
-.form-container {
-    margin: 10px;
-    text-align: left;
-    clear: both; 
+.registration-form legend {
+    font-family: var(--header-font);
 }
-.button-container   { text-align: right; }
-.button-container button {
-    width: 200px;
-    background: #ccc;
-    border: 1px solid #000;
-}
-.form-container fieldset > div > input { 
+.registration-form fieldset > div + div { margin-top: 0.5rem; }
+.registration-form fieldset > div > input { 
     width: calc(100% - 20px - 200px);
  }
-.certificate-frame, .resume-frame {
-    background: #000;
-    color: #fff;
+ .registration-form fieldset > div > input:not([type="file"]) { 
+     border-radius: 0.2rem;
+     padding: 2px 4px;
+     background: #fff;
+    border: 2px inset var(--grau);
+  }
+ .button-container   { 
+    text-align: right;
+    margin-top: 1rem;
+}
+ .button-container button {
+     width: 240px;
+     height: 34px;
+     border: none;
+     border-radius: 0.5rem;
+     background-color: var(--gruen);
+     cursor: pointer;
+     transition: all 0.2s ease-in-out;
+ }
+ .button-container button:hover {
+     background-color: var(--hell-gruen);
+     transform: scale(0.9);
+ }
+ .registration-form .certificate-frame, .registration-form .resume-frame {
+    background: var(--dunkel-blau);
+    color: var(--hell-blau);
     padding: 10px 20px;
+}
+@media screen and (max-width: 1024px) {
+    .form-container {
+        display: block;
+    }
+    .form-container > * {
+        width: 100%;
+    }
+    .form-container > * {
+        margin-top: 1rem;
+    }
 }
 
  @media screen and (max-width: 850px) {

@@ -11,7 +11,7 @@ export default function Main({user}) {
       <main>
         <Suchergebnisse />
         <Bewerbung />
-        <Dokumente  user={user} />
+        <Dokumente user={user} />
       </main>
   )
 }

@@ -51,9 +51,13 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
   return isAuthenticated ? (
     <Navigate to="/" />
   ) : (
-    <div className="registration form-container">
-        <h1>Registrierung</h1>
+    <div className="registration">
+      <h1>Registrierung</h1>
+      
+   
+        
       <form className="registration-form" onSubmit={handleSubmit}>
+      <div className="form-container">
         <fieldset>
             <legend>Zugangsdaten</legend>
             <div>
@@ -65,6 +69,7 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
                 <input type="password" name="password" id="password" value={password} onChange={handleChange}></input>
             </div>
         </fieldset>
+        <div>
         <fieldset>
             <legend>Persönliche Daten</legend>
             <div>
@@ -95,6 +100,7 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
         <div className="button-container">
             <button type="submit">Registrieren</button>
         </div>
+    </div></div>
       </form>
     </div>
   )
