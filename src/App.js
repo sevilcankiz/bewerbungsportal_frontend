@@ -3,8 +3,6 @@ import { getUser } from "./utils/dbUtils";
 import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Registrierung from "./Components/Registrierung";
-import Bewerbung from "./Components/Bewerbung";
-import Dokumente from "./Components/Dokumente";
 import Landingpage from './Components/Landingpage';
 import Suchergebnisse from './Components/Suchergebnisse';
 import Header from './Components/Header';
@@ -21,7 +19,6 @@ export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,8 +44,6 @@ export default function App() {
     setIsAuthenticated(false);
     navigate("/");
   };
-
-  console.log("authenticated??", isAuthenticated);
   return (
     <div className="App">
       <Header isAuthenticated={isAuthenticated} user={user} logOut={logOut} />
@@ -61,19 +56,16 @@ export default function App() {
           setIsAuthenticated={setIsAuthenticated}
           setToken={setToken}
         />
-        <Route path="/suchergebnisse" element={<Suchergebnisse />} />
-        <Route path="/bewerbung" element={<Bewerbung />} />
-        <Route path="/dokumente" element={<Dokumente />} />
-        <Route path="/main" element={<Main />} />
-
+        <Route path="suchergebnisse" element={<Suchergebnisse />} />
         <Route
-          path="/userdata"
+          path="user"
           element={<ProtectedLayout isAuthenticated={isAuthenticated} />}
         >
-          <Route index element={<Nutzerdaten user={user} token={token} />} />
+          <Route index element={<Nutzerdaten user={user} />} />
+          <Route path="main" element={<Main user={user} />} />
         </Route>
         <Route
-          path="/register"
+          path="register"
           element={
             <Registrierung
               isAuthenticated={isAuthenticated}
@@ -83,7 +75,7 @@ export default function App() {
           }
         />
         <Route
-          path="/login"
+          path="login"
           element={
             <Anmeldung
               isAuthenticated={isAuthenticated}
