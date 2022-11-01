@@ -1,14 +1,16 @@
 import React from 'react'
-import '../Styles/main.css';
+import "../Styles/forms.css";
 
 export default function Bewerbung() {
   return (
-    <div id='bewerbung'>
+    <form id='bewerbung'>
       <div className='textfeld'>
         <textarea type="text" placeholder="Anrede" ></textarea>
-        <br/>
         <textarea className="anschreiben" type="text" placeholder="Bewerbung" ></textarea>
       </div>
-    </div>
+        <div className="button-container">
+            <button type="submit">Bewerben</button>
+        </div>
+    </form>
   )
 }
