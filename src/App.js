@@ -9,6 +9,7 @@ import Landingpage from './Components/Landingpage';
 import Suchergebnisse from './Components/Suchergebnisse';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import Main from './Components/Main';
 import Anmeldung from './Components/Anmeldung';
 import Nutzerdaten from './Components/Nutzerdaten';
 import ProtectedLayout from './Components/ProtectedLayout';
@@ -63,6 +64,8 @@ export default function App() {
         <Route path="/suchergebnisse" element={<Suchergebnisse />} />
         <Route path="/bewerbung" element={<Bewerbung />} />
         <Route path="/dokumente" element={<Dokumente />} />
+        <Route path="/main" element={<Main />} />
+
         <Route
           path="/userdata"
           element={<ProtectedLayout isAuthenticated={isAuthenticated} />}

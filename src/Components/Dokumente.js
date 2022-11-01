@@ -3,7 +3,7 @@ import '../Styles/dokumente.css';
 
 export default function Dokumente() {
   return (
-    <div className="display">
+    <div className="display" id='dokumente'>
       <section>
         <h4>Lebensläufe</h4>
         <p>Lebenslauf-1</p>
