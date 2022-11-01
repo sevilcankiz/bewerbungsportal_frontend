@@ -49,7 +49,6 @@ export default function SearchBar() {
       const jsonData = await searchJobs(formDataJson);
       
       if (jsonData) {
-        console.log("JSON Data", jsonData);
         setSucheStarten(true);
         setJobErgebnisse(jsonData);
       } else {        

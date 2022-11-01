@@ -26,7 +26,6 @@ export default function Anmeldung({ isAuthenticated, setToken, setIsAuthenticate
         });
 
         const {content} = await loginUser(formDataJson);
-          console.log("content", content);
           localStorage.setItem("token", content.token);
           setToken(content.token);
           setIsAuthenticated(true);
@@ -41,7 +40,7 @@ export default function Anmeldung({ isAuthenticated, setToken, setIsAuthenticate
   return isAuthenticated ? (
     <Navigate to={from} replace="true" />
   ) : (
-    <div className="registration form-container">
+    <div className="registration">
         <h1>Login</h1>
       <form className="registration-form" onSubmit={handleSubmit}>
         <fieldset>
