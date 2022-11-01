@@ -6,12 +6,12 @@ import Dokumente from "./Dokumente";
 
 
 
-export default function Main({ isAuthenticated, setToken, setIsAuthenticated, user }) {
+export default function Main({user}) {
   return (    
       <main>
-        <Suchergebnisse/>
-        <Bewerbung/>
-        <Dokumente/>
+        <Suchergebnisse />
+        <Bewerbung />
+        <Dokumente  user={user} />
       </main>
   )
 }

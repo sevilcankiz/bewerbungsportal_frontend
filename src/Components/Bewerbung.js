@@ -3,8 +3,8 @@ import '../Styles/main.css';
 
 export default function Bewerbung() {
   return (
-    <div>
-      <div className='textfeld' id='bewerbung'>
+    <div id='bewerbung'>
+      <div className='textfeld'>
         <textarea type="text" placeholder="Anrede" ></textarea>
         <br/>
         <textarea className="anschreiben" type="text" placeholder="Bewerbung" ></textarea>
