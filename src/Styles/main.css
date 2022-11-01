@@ -12,14 +12,8 @@
 }
 
 textarea{
-    width: 50%;
-    /* height: fit-content; */
-    display: block;
-    margin-left: 450px;
-    margin-right: auto;
-    margin: 3px solid darkgray;
+    border: 3px solid darkgray;
 }
-
 .anschreiben{
     height: 500px;
 }
@@ -30,20 +24,26 @@ textarea{
 }
 
 
+
+main { display: flex; }
+main > div { width: 32%; }
+
+
 @media screen and (max-width: 850px){
+
+    main { display: block; }
+
     .suchergebnisse{
         max-width: 100%;
         margin: 30px 20px;
 
     }
-
     textarea{
         width: 80%;
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
-
     .anschreiben{
         height: 400px;
     }

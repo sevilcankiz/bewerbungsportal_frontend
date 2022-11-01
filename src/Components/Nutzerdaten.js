@@ -4,10 +4,9 @@ import { updateUser } from "../utils/dbUtils";
 import "../Styles/forms.css";
 
 
-export default function Nutzerdaten({user, token}) {
+export default function Nutzerdaten({user}) {
 
-    console.log('user in nutzerdaten',user);
-    console.log('token in Local' ,localStorage.token)
+    console.log('user in nutzerdaten', user);
 
     const [{ email, firstName, lastName, postCode, street, city, phone, file_type }, setFormState] = useState({
         email: user.address.email,
