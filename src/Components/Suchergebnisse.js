@@ -7,7 +7,7 @@ export default function Suchergebnisse({jobErgebnisse}) {
   
   console.log("Suchergebnisse", jobErgebnisse);
     return (
-      <div className='suchergebnisse'>
+      <div className='suchergebnisse' id='suchergebnisse'>
          {jobErgebnisse&&jobErgebnisse.map((job) => ( <div className='job-cards'><Jobcard key={job.hashId} params={job} /><input type="checkbox" id={job.hashId} /></div> ))}
         </div>
     )
