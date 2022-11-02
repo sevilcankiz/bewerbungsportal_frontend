@@ -102,7 +102,7 @@ export default function Nutzerdaten({user}) {
     <form className="registration-form" method="post" encType="multipart/form-data" action={ `${process.env.REACT_APP_PROJECT_API}/users/${user._id}/${file_type}` }>
         <div>
             {
-                user.resumes.length &&
+                user.resumes.length > 0 &&
                     <div className="resume-frame">
                         <h3>Lebensläufe</h3>
                          {user.resumes.length &&
@@ -118,7 +118,7 @@ export default function Nutzerdaten({user}) {
                      </div>
             }
             {
-                user.certificates.length &&
+                user.certificates.length > 0 &&
                     <div className="certificate-frame">
                         <h3>Zertifikate</h3>
                          {user.certificates.length &&
