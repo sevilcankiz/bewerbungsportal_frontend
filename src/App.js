@@ -6,7 +6,6 @@ import Registrierung from "./Components/Registrierung";
 import Landingpage from './Components/Landingpage';
 import Suchergebnisse from './Components/Suchergebnisse';
 import Header from './Components/Header';
-import Footer from './Components/Footer';
 import Main from './Components/Main';
 import Anmeldung from './Components/Anmeldung';
 import Nutzerdaten from './Components/Nutzerdaten';
@@ -85,8 +84,6 @@ export default function App() {
           }
         />
       </Routes>
-
-      <Footer />
     </div>
   );
 }

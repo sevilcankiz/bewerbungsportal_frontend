@@ -13,10 +13,13 @@
 
 textarea{
     border: 3px solid darkgray;
+    width: 500px;
+    
 }
 .anschreiben{
     height: 500px;
 }
+
 
 .textfeld{
     margin-top: 30px;
@@ -32,7 +35,6 @@ textarea {
 }
 
 
-
 main { display: flex; }
 main > div { width: 32%; }
 
@@ -46,8 +48,8 @@ main > div { width: 32%; }
         margin: 30px 20px;
 
     }
-    textarea{
-        width: 80%;
+    .textarea{
+        
         display: block;
         margin-left: auto;
         margin-right: auto;
