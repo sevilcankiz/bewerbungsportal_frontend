@@ -54,10 +54,11 @@
     background: none;
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 100%;
     right: 25px;
     transform: translateY(-50%);
     color: white;
+    
 } 
 
 .active {
@@ -112,7 +113,8 @@
         z-index: 1;
         max-height: 200px;
         max-width: 200px;
-        margin: 105px;
+        margin: 110px;
+        padding-top: 300px;
         /* border: 1px solid black; */
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
