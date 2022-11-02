@@ -52,8 +52,9 @@ export default function Nutzerdaten({user}) {
       };
 
   return (
-    <div className="registration form-container">
+    <div className="registration">
         <h1>Meine Informationen</h1>
+        <div className="form-container">
         <form className="registration-form" onSubmit={handleSubmit}>
         <fieldset>
             <legend>Persönliche Daten</legend>
@@ -149,7 +150,7 @@ export default function Nutzerdaten({user}) {
             <button type="submit">Datei hochladen</button>
         </div>
     </form>
-
+    </div>
     </div>
   )
 }

@@ -13,9 +13,7 @@ export default function Dokumente({user}) {
                  user.resumes.map((resume) => {
                         return (resume.resName !== "") ?
                          (
-                             <div key={resume._id} className="resume-card">
-                                 <p><input type="checkbox" id={resume._id} /> {resume.resName}</p>
-                              </div>
+                             <p><input type="checkbox" id={resume._id} /> {resume.resName}</p>
                           ) : "";
                       }
                  )}
@@ -29,9 +27,7 @@ export default function Dokumente({user}) {
                     user.certificates.map((certificate) => {
                         return (certificate.certName !== "") ?
                         (
-                                <div key={certificate._id} className="certificate-card">
-                                    <p><input type="checkbox" id={certificate._id} /> {certificate.certName}</p>
-                                </div>
+                                <p><input type="checkbox" id={certificate._id} /> {certificate.certName}</p>
                         ) : "";
                     }
                  )}

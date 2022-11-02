@@ -3,7 +3,6 @@ import '../Styles/jobcard.css'
 
 
 export default function Jobcard({params}) {
-  console.log("Jobcard-params: ",params);
     return (
       <article className='jobcard'>
         <h4>Beruf: {params.beruf}</h4>
