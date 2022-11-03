@@ -4,10 +4,10 @@
     padding: 0.5em;
     position: absolute;
     top: 3.3em;
-    right: calc(100vw / 2.5);
+    right: calc(100vw / 2.6);
     background-color: #1b1a20c5;
     color: var(--gelb);
-    max-width: calc(100 / 2);
+    max-width: calc(100% / 2);
     /* margin-top: 200px; */
     
     /* box-shadow: 0.5em 0.8em 2em var(--dunkel-blau); */
@@ -37,8 +37,8 @@
 
 /* Plus-Button */
 .searchbar>button{
-    height: 38px;
-    width: 38px;
+    height: 2em;
+    width: 2em;
     border: none;
     border-radius: 0.2em;
     background-color: var(--gruen);
@@ -66,6 +66,8 @@
 }
 
 .fieldsets{
+    padding-left: 0.5em;
+    padding-bottom: 0.2em;
     border-radius: 1em;
     border-color: var(--gelb);
 }
@@ -74,10 +76,25 @@
     font-size: smaller;
 }
 
+.fieldsets>div>input[type="checkbox"]{
+    margin-left: 0.8em;
+}
+
+/* @media screen and (max-width: 1400px){
+    #search-form{
+        max-width: calc(100% / 3);
+    }
+    
+    .searchbar{
+        min-width: 100%;
+    }
+} */
+    
+
 
 @media screen and (max-width: 1100px){
     #search-form{
-        left: calc(100vw / 4);
+        left: auto;
     }
     .searchbar{
         display: flex;
@@ -97,21 +114,3 @@
     }
 
   }
-
-  @media screen and (max-width: 800px){
-    #search-form{
-        left: calc(100vw / 6);
-        min-width: 70vw;
-    }
-
-    .searchbar{
-      flex-direction: column;
-      align-items: stretch;
-      min-width: 100%;
-        
-    }
-
-    #search-form{
-        margin-top: 200px;
-    }
-} 

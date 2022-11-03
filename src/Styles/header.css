@@ -82,6 +82,11 @@
 }
   
 @media screen and (max-width: 1110px) {
+    .header {
+        height: 324px;
+        background-image: url(../img/hero2.jpg);
+    }
+
     .menu-button {
         display: inline-block;
         
@@ -117,7 +122,19 @@
         /* border: 1px solid black; */
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
-    }
+    }    
+}
 
-    
+@media screen and (max-width: 850px) {
+    .header {
+        height: 250px;
+        background-image: url(../img/hero3.jpg);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header {
+        height: 243px;
+        background-image: url(../img/hero4.jpg);
+    }
 }
