@@ -103,7 +103,7 @@
     }
 
     .nav-menu li:hover {
-        background-color: #eee;
+        background-color: var(--hell-blau);
     }
 
     .nav-menu.expanded ul {
