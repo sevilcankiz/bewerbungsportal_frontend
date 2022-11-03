@@ -54,10 +54,11 @@
     background: none;
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 100%;
     right: 25px;
     transform: translateY(-50%);
     color: white;
+    
 } 
 
 .active {
@@ -107,11 +108,11 @@
 
     .nav-menu.expanded ul {
         display: block;
-        /* position: relative;
+        /* position: relative; */
         top: 170px;
-        z-index: 1;
+        /* z-index: 1; */
         max-height: 200px;
-        max-width: 200px; */
+        max-width: 200px;
         /* margin: 105px; */
         /* border: 1px solid black; */
         border-bottom-left-radius: 5px;
