@@ -68,7 +68,7 @@ export default function App() {
           element={<ProtectedLayout isAuthenticated={isAuthenticated} />}
         >
           <Route index element={<Nutzerdaten user={user} setUser={setUser} />} />
-          <Route path="main" element={<Main user={user} />} />
+          <Route path="main" element={<Main user={user} jobErgebnisse={jobErgebnisse} />} />
         </Route>
         <Route
           path="register"

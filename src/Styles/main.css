@@ -1,8 +1,6 @@
-.suchergebnisse{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 99vw;
-    margin: 0 auto;
+.suchergebnisse2{
+    display: flex;
+    flex-direction: column;
 }
 
 .job-cards{
@@ -42,12 +40,14 @@ main > div { width: 32%; }
 @media screen and (max-width: 850px){
 
     main { display: block; }
+    main > div { width: 95%; }
 
-    .suchergebnisse{
-        max-width: 100%;
-        margin: 30px 20px;
+    .suchergebnisse2{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;    
+     }
 
-    }
     .textarea{
         
         margin-left: auto;
@@ -60,18 +60,4 @@ main > div { width: 32%; }
     }
 }
     
-@media only screen and (max-width: 1279px) {
-    .suchergebnisse{
-       grid-template-columns: repeat(3, 1fr);
-    }
-}
-@media only screen and (max-width: 1023px) {
-    .suchergebnisse{
-       grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media only screen and (max-width: 567px) {
-    .suchergebnisse{
-       grid-template-columns: repeat(1, 1fr);
-    }
-}
+

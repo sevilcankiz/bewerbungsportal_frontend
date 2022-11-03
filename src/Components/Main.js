@@ -7,10 +7,13 @@ import Footer from "./Footer";
 
 
 
-export default function Main({user}) {
+
+export default function Main({user, jobErgebnisse}) {
+  console.log("jobErgebnisse in Main", jobErgebnisse);
+
   return (    
       <main>
-        <Suchergebnisse />
+        <Suchergebnisse className="suchergebnisse2" jobErgebnisse={jobErgebnisse}/>
         <Bewerbung />
     
         <Dokumente user={user} />
