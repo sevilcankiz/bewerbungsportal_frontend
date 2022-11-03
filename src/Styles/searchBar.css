@@ -37,8 +37,8 @@
 
 /* Plus-Button */
 .searchbar>button{
-    height: 2em;
-    width: 2em;
+    height: 38px;
+    width: 38px;
     border: none;
     border-radius: 0.2em;
     background-color: var(--gruen);
@@ -80,19 +80,8 @@
     margin-left: 0.8em;
 }
 
-/* @media screen and (max-width: 1400px){
-    #search-form{
-        max-width: calc(100% / 3);
-    }
-    
-    .searchbar{
-        min-width: 100%;
-    }
-} */
-    
 
-
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1380px){
     #search-form{
         left: auto;
     }
