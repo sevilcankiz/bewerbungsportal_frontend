@@ -36,7 +36,6 @@ export default function Registrierung({ isAuthenticated, setToken, setIsAuthenti
                 "phone": [phone]
             }
         });
-
           const {content} = await registerUser(formDataJson);
           console.log("test", content);
           localStorage.setItem("token", content.token);

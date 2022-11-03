@@ -5,12 +5,12 @@ import "../Styles/searchBar.css";
 // import "../Styles/forms.css";
 import SearchLogo from '../img/icons8-suche.svg';
 import PlusLogo from '../img/icons8-plus.svg';
-import Suchergebnisse from "./Suchergebnisse";
+// import Suchergebnisse from "./Suchergebnisse";
 
-export default function SearchBar() {
+export default function SearchBar({jobErgebnisse, setJobErgebnisse}) {
   const [sucheStarten, setSucheStarten] = useState(false);
   const [isVolleSuche, setIsVolleSuche] = useState(false);
-  const [jobErgebnisse, setJobErgebnisse] = useState([]);
+  // const [jobErgebnisse, setJobErgebnisse] = useState([]);
   const [{ 
     jobArt, 
     jobOrt
@@ -59,6 +59,7 @@ export default function SearchBar() {
       console.log(error.message);
     }
   }
+
 
   const handleVollsuche = () => {
     setIsVolleSuche(!isVolleSuche);
@@ -124,7 +125,9 @@ export default function SearchBar() {
       </form>
     </div>
     
-      {sucheStarten &&<Suchergebnisse jobErgebnisse={jobErgebnisse} />}
+      {sucheStarten 
+      // &&<Suchergebnisse jobErgebnisse={jobErgebnisse} />
+      }
    
       </>
   )

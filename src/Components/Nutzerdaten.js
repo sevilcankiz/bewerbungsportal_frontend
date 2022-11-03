@@ -4,9 +4,7 @@ import { updateUser } from "../utils/dbUtils";
 import "../Styles/forms.css";
 
 
-export default function Nutzerdaten({user}) {
-
-    console.log('user in nutzerdaten', user);
+export default function Nutzerdaten({user, setUser}) {
 
     const [{ email, firstName, lastName, postCode, street, city, phone, file_type }, setFormState] = useState({
         email: user.address.email,
@@ -18,8 +16,6 @@ export default function Nutzerdaten({user}) {
         phone: user.address.phone[0],
         file_type: "resumes"
       });
-      
-      console.log(file_type);
 
       const handleChange = (e) => setFormState((prev) => ({ ...prev, [e.target.id]: e.target.value }));
       const handleSubmit = async (e) => {
@@ -40,16 +36,16 @@ export default function Nutzerdaten({user}) {
                 "phone": [phone]
             }
         });
-        console.log(formDataJson);
-          const { returnDataJson, error } = await updateUser(formDataJson);
-          if (error) {
-            console.log(error.message);
-          }
-          console.log("returnDataJson", returnDataJson);
+        console.log("formDataJson", formDataJson);
+          const  {content}  = await updateUser(formDataJson);
+          console.log("returnDataJson", content);
+          setUser(content);
         } catch (error) {
           console.log(error.message);
         }
       };
+
+      console.log('user in Nutzerdaten', user)
 
   return (
     <div className="registration">
@@ -102,7 +98,7 @@ export default function Nutzerdaten({user}) {
     <form className="registration-form" method="post" encType="multipart/form-data" action={ `${process.env.REACT_APP_PROJECT_API}/users/${user._id}/${file_type}` }>
         <div>
             {
-                user.resumes.length &&
+                user.resumes.length > 0 &&
                     <div className="resume-frame">
                         <h3>Lebensläufe</h3>
                          {user.resumes.length &&
@@ -118,7 +114,7 @@ export default function Nutzerdaten({user}) {
                      </div>
             }
             {
-                user.certificates.length &&
+                user.certificates.length > 0 &&
                     <div className="certificate-frame">
                         <h3>Zertifikate</h3>
                          {user.certificates.length &&
