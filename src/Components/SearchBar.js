@@ -1,10 +1,11 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { searchJobs } from '../utils/jobApiUtils';
 import "../Styles/searchBar.css";
 // import "../Styles/forms.css";
 import SearchLogo from '../img/icons8-suche.svg';
 import PlusLogo from '../img/icons8-plus.svg';
+import { Navigate } from "react-router-dom";
 // import Suchergebnisse from "./Suchergebnisse";
 
 export default function SearchBar({jobErgebnisse, setJobErgebnisse}) {
@@ -21,22 +22,12 @@ export default function SearchBar({jobErgebnisse, setJobErgebnisse}) {
 
   const handleChange = (e) => setFormState((prev) => ({ ...prev, [e.target.id]: e.target.value }));
 
-  //useEffect(()=>{
-    // setJobArt(localStorage.getItem("jobArt"));
-    // setJobOrt(localStorage.getItem("jobOrt"));
-    // if (jobArt ) {
-    //   // localStorage.removeItem("jobArt");
-    //   const jobArtInput = document.getElementById("jobArt");
-    //   jobArtInput.value = jobArt;
-    // }
-    // if (jobOrt) {
-    //   // localStorage.removeItem("jobOrt");
-    //   const jobOrtInput = document.getElementById("jobOrt");
-    //   jobOrtInput.value = jobOrt;
-    // }
-  //return () => setJobErgebnisse([]);
-  //}, [jobArt, jobOrt, isVolleSuche]);
-  
+  useEffect(() => {
+    
+    return () => {
+      setSucheStarten(false);
+    };
+  }, [sucheStarten]);  
   
 
   const handleSubmit = async(e) => {
@@ -126,7 +117,7 @@ export default function SearchBar({jobErgebnisse, setJobErgebnisse}) {
     </div>
     
       {sucheStarten 
-      // &&<Suchergebnisse jobErgebnisse={jobErgebnisse} />
+       &&<Navigate to="/suchergebnisse" jobErgebnisse={jobErgebnisse} />
       }
    
       </>

@@ -119,7 +119,7 @@
     }
 
     .nav-menu li:hover {
-        background-color: #eee;
+        background-color: var(--hell-blau);
     }
 
     .nav-menu.expanded ul {
@@ -128,7 +128,6 @@
         /* z-index: 1; */
         top: 60px;
         left: -100px;
-        
     }
 
 
