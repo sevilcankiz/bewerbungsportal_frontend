@@ -108,14 +108,13 @@
 
     .nav-menu.expanded ul {
         display: block;
-        position: relative;
+        /* position: relative; */
         top: 170px;
-        z-index: 1;
+        /* z-index: 1; */
         max-height: 200px;
         max-width: 200px;
         margin: 110px;
         padding-top: 300px;
-        /* border: 1px solid black; */
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
     }
