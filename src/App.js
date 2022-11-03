@@ -18,12 +18,15 @@ export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   
+  const [jobErgebnisse, setJobErgebnisse] = useState([]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
     const validateToken = async () => {
       try {
         const { content } = await getUser(token);
+        console.log("content", content);
         setUser(content);
         setIsAuthenticated(true);
       } catch (error) {
@@ -46,21 +49,20 @@ export default function App() {
   return (
     <div className="App">
       <Header isAuthenticated={isAuthenticated} user={user} logOut={logOut} />
-      <SearchBar />
+      <SearchBar jobErgebnisse={jobErgebnisse} setJobErgebnisse={setJobErgebnisse}/>
       <Routes>
         <Route
           path="/"
-          element={<Landingpage />}
+          element={<Landingpage
           isAuthenticated={isAuthenticated}
-          setIsAuthenticated={setIsAuthenticated}
-          setToken={setToken}
+          user={user} />}
         />
-        <Route path="suchergebnisse" element={<Suchergebnisse />} />
+        <Route path="suchergebnisse" element={<Suchergebnisse jobErgebnisse={jobErgebnisse}/>} />
         <Route
           path="user"
           element={<ProtectedLayout isAuthenticated={isAuthenticated} />}
         >
-          <Route index element={<Nutzerdaten user={user} />} />
+          <Route index element={<Nutzerdaten user={user} setUser={setUser} />} />
           <Route path="main" element={<Main user={user} />} />
         </Route>
         <Route

@@ -5,6 +5,8 @@ import Jobcard from './Jobcard';
 
 export default function Suchergebnisse({jobErgebnisse}) {
   
+  
+  console.log('jobergebnisse in Suchergebnisse', jobErgebnisse);
     
     return (
       <div className='suchergebnisse' id='suchergebnisse'>

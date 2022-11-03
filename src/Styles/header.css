@@ -17,7 +17,7 @@
     top: 2em;
 }
 
-.menu ul{
+.menu ul {
     display: flex;
     gap: 0.3em;
     list-style: none;
@@ -89,7 +89,7 @@
     .nav-menu ul {
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        /* top: 60px; */
         left: 0;
         width: 100%;
         height: calc(100vh - 60px);        
@@ -107,12 +107,12 @@
 
     .nav-menu.expanded ul {
         display: block;
-        position: relative;
+        /* position: relative;
         top: 170px;
         z-index: 1;
         max-height: 200px;
-        max-width: 200px;
-        margin: 105px;
+        max-width: 200px; */
+        /* margin: 105px; */
         /* border: 1px solid black; */
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
