@@ -5,7 +5,7 @@ export const getUser = async (token) => {
       headers: { Authorization: token }
     });
     const content = await data.json();
-    console.log("content", content)
+    console.log("content 1", content)
     return { content };
   } catch (error) {
     return { error };
@@ -27,7 +27,7 @@ export const registerUser = async (formDataJson) => {
       }
     );
     const content = await data.json();
-    console.log("content", content)
+    console.log("content 2", content)
     return { content };
   } catch (error) {
     return { error };
@@ -49,7 +49,7 @@ export const updateUser = async (formDataJson) => {
       }
     );
     const content = await data.json();
-    console.log("content", content)
+    console.log("content 3", content)
     return { content };
   } catch (error) {
     return { error };

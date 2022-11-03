@@ -6,7 +6,7 @@ export default function Dokumente({user}) {
   return (
     <div className="display" id='dokumente'>
       {
-        user.resumes.length &&
+        user.resumes.length > 0 &&
             <section className="resume-frame">
                 <h4>Lebensläufe</h4>
                  {user.resumes.length &&
@@ -20,10 +20,10 @@ export default function Dokumente({user}) {
              </section>
     }
     {
-        user.certificates.length &&
+        user.certificates.length > 0 &&
             <section className="certificate-frame">
                 <h4>Zertifikate</h4>
-                 {user.certificates.length &&
+                 {user.certificates.length > 0 &&
                     user.certificates.map((certificate) => {
                         return (certificate.certName !== "") ?
                         (
