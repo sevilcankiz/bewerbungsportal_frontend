@@ -1,4 +1,4 @@
-.suchergebnisse2{
+ main .suchergebnisse{
     display: flex;
     flex-direction: column;
 }
@@ -42,7 +42,7 @@ main > div { width: 32%; }
     main { display: block; }
     main > div { width: 95%; }
 
-    .suchergebnisse2{
+    main .suchergebnisse{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;    
