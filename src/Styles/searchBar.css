@@ -84,6 +84,7 @@
 @media screen and (max-width: 1380px){
     #search-form{
         left: auto;
+        top: 70px;
     }
     .searchbar{
         display: flex;
