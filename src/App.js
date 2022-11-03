@@ -39,6 +39,11 @@ export default function App() {
     token && validateToken();
   }, [token]);
 
+  
+  useEffect(() => {
+
+  }, [jobErgebnisse]);
+
   const logOut = () => {
     localStorage.removeItem("token");
     setToken(null);
