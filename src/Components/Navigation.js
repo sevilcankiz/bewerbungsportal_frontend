@@ -17,15 +17,15 @@ export default function Navigation({ isAuthenticated, logOut, user }) {
                 <ul>
                 { isAuthenticated && user ? (
                      <>
-                     <li><NavLink to="/user">Nutzerdaten</NavLink></li>
+                     <li className='nutzer'><NavLink to="/user">Nutzerdaten</NavLink></li>
                     <li onClick={logOut}>Logout</li>
-                    <li><NavLink to="/user/main">Info</NavLink></li>
+                    <li className='info'><NavLink to="/user/main">Info</NavLink></li>
                      </>
                 ) : (
                     <>
-                    <li><NavLink to="/login">Login</NavLink></li>
+                    <li className='nutzer'><NavLink to="/login">Login</NavLink></li>
                     <li><NavLink to="/register">Registrierung</NavLink></li>
-                    <li><NavLink to="/">Info</NavLink></li>
+                    <li className='info'><NavLink to="/">Info</NavLink></li>
                     </>
                 )}
                 </ul>
