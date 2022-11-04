@@ -13,7 +13,7 @@ export default function Main({user, jobErgebnisse}) {
 
   return (    
       <main>
-        <Suchergebnisse className="suchergebnisse2" jobErgebnisse={jobErgebnisse}/>
+        <Suchergebnisse jobErgebnisse={jobErgebnisse}/>
         <Bewerbung />
     
         <Dokumente user={user} />
